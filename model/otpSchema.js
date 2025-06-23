@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 
 const OTPSchema = new mongoose.Schema({
-   userId:String,
+   userId:{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
+   },
    otp:{
       type:String
    },
